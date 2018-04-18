@@ -20,7 +20,8 @@ export_pmbootstrap_dir() {
 	fi
 
 	# Fail with debug information
-	export pmbootstrap_dir="$script_dir/.."
+	# shellcheck disable=SC2155
+	export pmbootstrap_dir=$(realpath "$script_dir/..")
 	if ! [ -e "$pmbootstrap_dir/pmbootstrap.py" ]; then
 		echo "ERROR: Failed to get the script's location with your shell."
 		echo "Please adjust export_pmbootstrap_dir in envkernel.sh. Debug info:"

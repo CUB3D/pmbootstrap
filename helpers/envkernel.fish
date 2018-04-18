@@ -14,7 +14,7 @@ function export_pmbootstrap_dir
 	set script_dir (dirname (status filename))
 
 	# Fail with debug information
-	set -gx pmbootstrap_dir $script_dir/..
+	set -gx pmbootstrap_dir (realpath $script_dir/..)
 	if not test -e $pmbootstrap_dir/pmbootstrap.py
 		echo "ERROR: Failed to get the script's location with your shell."
 		echo "Please adjust export_pmbootstrap_dir in envkernel.fish. Debug info:"
