@@ -1,0 +1,22 @@
+# Reference: <https://postmarketos.org/devicepkg>
+pkgname="device-samsung-i8190"
+pkgdesc="Samsung Galaxy SIII mini"
+pkgver=0.1
+pkgrel=0
+url="https://postmarketos.org"
+license="MIT"
+arch="noarch"
+options="!check"
+depends="postmarketos-base linux-samsung-i8190 mkbootimg mesa-dri-swrast"
+makedepends="devicepkg-dev"
+source="deviceinfo"
+
+build() {
+	devicepkg_build $startdir $pkgname
+}
+
+package() {
+	devicepkg_package $startdir $pkgname
+}
+
+sha512sums="7391ff15dfb87bcc96456b5c5e3881cc6670deba1f0d99cf976de6cacf599689c15b08ba10a49bf053ac97140b9321ddf0ff2d91973d758240c0b7c44143ab38  deviceinfo"
