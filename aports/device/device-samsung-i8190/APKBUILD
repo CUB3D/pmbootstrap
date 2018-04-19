@@ -24,5 +24,5 @@ package() {
     install -Dm644 "$srcdir"/init-usb-hook.sh "$pkgdir"/etc/postmarketos-mkinitfs/hooks/00-init_usb.sh
 }
 
-sha512sums="3fbbd19c756f8b07a40527729ceb2b72ccc469d7c136701bafd98ddf1694f5d5626acba749eee0cb5a1e27717882e815c2eddcf30d9b0a9441924fe3a3076644  deviceinfo
+sha512sums="02774739faf54ca26690bc35fc83bccfbaebf092de35b15226f738bc5dedf2a3846e990738354b7d9da06ee915febad8f1d963dadd1f6ac9b7fdd118a415caf9  deviceinfo
 f1704c80cb0e6757109e36797d2097eb76c99c79cd525d28fe81889f0e946aa3edeae08154067ef9492adb6fe131fe7a476aea41fef65b0effccadf5b8e513a2  init-usb-hook.sh"
