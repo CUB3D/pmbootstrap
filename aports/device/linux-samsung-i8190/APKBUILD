@@ -22,12 +22,12 @@ source="
 	$pkgname-$_commit.tar.gz::https://github.com/NovaFusion/${_repository}/archive/${_commit}.tar.gz
 	$_config
 	compiler-gcc6.h
-    00_fix_makefile.patch
-    01_fix_return_address.patch
-    02_timeconst_fix.patch
-    03_fix_rndis.patch
-    04_fix_bcma.patch
-    05_change_dhd_firmware_path.patch
+	00_fix_makefile.patch
+	01_fix_return_address.patch
+	02_timeconst_fix.patch
+	03_fix_rndis.patch
+	04_fix_bcma.patch
+	05_change_dhd_firmware_path.patch
 "
 builddir="$srcdir/${_repository}-${_commit}"
 
