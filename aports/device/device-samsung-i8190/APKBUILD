@@ -1,14 +1,15 @@
 # Reference: <https://postmarketos.org/devicepkg>
 pkgname="device-samsung-i8190"
 pkgdesc="Samsung Galaxy SIII mini"
-pkgver=0.3
-pkgrel=2
+pkgver=0.4
+pkgrel=3
 url="https://postmarketos.org"
 license="MIT"
 arch="noarch"
 options="!check"
 depends="postmarketos-base linux-samsung-i8190 mkbootimg mesa-dri-swrast"
 makedepends="devicepkg-dev"
+subpackages="$pkgname-nonfree-firmware:nonfree_firmware"
 source="
 	deviceinfo
 	init-usb-hook.sh
@@ -29,6 +30,12 @@ package() {
 		"$pkgdir"/etc/modules-load.d/00-load-wifi.conf
 	install -Dm644 "$srcdir"/module-config.conf \
 		"$pkgdir"/etc/modprobe.d/00-module-config.conf
+}
+
+nonfree_firmware() {
+	pkgdesc="Wifi firmware"
+	depends="firmware-samsung-i8190"
+	mkdir "$subpkgdir"
 }
 
 sha512sums="02774739faf54ca26690bc35fc83bccfbaebf092de35b15226f738bc5dedf2a3846e990738354b7d9da06ee915febad8f1d963dadd1f6ac9b7fdd118a415caf9  deviceinfo
