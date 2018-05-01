@@ -26,16 +26,17 @@ package() {
 
 	install -Dm644 "$srcdir"/init-usb-hook.sh \
 		"$pkgdir"/etc/postmarketos-mkinitfs/hooks/00-init_usb.sh
-	install -Dm644 "$srcdir"/modules-load.conf \
-		"$pkgdir"/etc/modules-load.d/00-load-wifi.conf
-	install -Dm644 "$srcdir"/module-config.conf \
-		"$pkgdir"/etc/modprobe.d/00-module-config.conf
 }
 
 nonfree_firmware() {
 	pkgdesc="Wifi firmware"
 	depends="firmware-samsung-i8190"
-	mkdir "$subpkgdir"
+	
+	# Add wifi config
+	install -Dm644 "$srcdir"/modules-load.conf \
+		"$subpkgdir"/etc/modules-load.d/00-load-wifi.conf
+	install -Dm644 "$srcdir"/module-config.conf \
+		"$subpkgdir"/etc/modprobe.d/00-module-config.conf
 }
 
 sha512sums="02774739faf54ca26690bc35fc83bccfbaebf092de35b15226f738bc5dedf2a3846e990738354b7d9da06ee915febad8f1d963dadd1f6ac9b7fdd118a415caf9  deviceinfo
